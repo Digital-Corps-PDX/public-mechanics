@@ -1,39 +1,31 @@
-/* Public Mechanics Custom Styles */
+/* Public Mechanics Custom Styles - Brutalist Palette */
 
-/* Custom font - replace with your purchased font */
-@font-face {
-  font-family: 'PubMechFont';
-  src: url('../fonts/pubmech-regular.woff2') format('woff2');
-  font-weight: normal;
-  font-style: normal;
-}
+/* Fonts from CDN */
+@import url('https://fonts.cdnfonts.com/css/space-grotesk');
 
-@font-face {
-  font-family: 'PubMechFont';
-  src: url('../fonts/pubmech-bold.woff2') format('woff2');
-  font-weight: bold;
-  font-style: normal;
-}
-
-/* CSS Variables for easy theme updates */
+/* CSS Variables - 1960s Brutalist/Concrete palette */
 :root {
-  --pubmech-primary: #1b1b1b;
-  --pubmech-accent: #0071bc;
-  --pubmech-text: #212121;
-  --pubmech-gray: #71767a;
-  --pubmech-font-body: 'PubMechFont', system-ui, -apple-system, sans-serif;
-  --pubmech-font-heading: 'PubMechFont', system-ui, -apple-system, sans-serif;
+  --pubmech-primary: #696969; /* Concrete gray */
+  --pubmech-accent: #dc143c; /* Signal red */
+  --pubmech-yellow: #ffd700; /* Safety yellow - alternative accent */
+  --pubmech-text: #1a1a1a; /* Near black */
+  --pubmech-light: #f5f5f0; /* Off-white */
+  --pubmech-dark: #2b2b2b; /* Dark charcoal */
+  --pubmech-font-body: 'Space Grotesk', system-ui, -apple-system, sans-serif;
+  --pubmech-font-heading: 'Space Grotesk', system-ui, -apple-system, sans-serif;
 }
 
 /* Apply custom typography */
 body {
   font-family: var(--pubmech-font-body);
+  color: var(--pubmech-text);
 }
 
 h1, h2, h3, h4, h5, h6,
 .usa-hero__heading,
 .font-heading-xl {
   font-family: var(--pubmech-font-heading);
+  font-weight: 700;
 }
 
 /* Custom link styles */
@@ -46,44 +38,84 @@ a:hover {
 }
 
 /* Header customization */
+.usa-header {
+  border-bottom: 4px solid var(--pubmech-accent);
+}
+
 .usa-logo__text a {
-  color: var(--pubmech-primary);
+  color: var(--pubmech-text);
   text-decoration: none;
+  font-weight: 700;
 }
 
 /* Hero section customization */
 .usa-hero {
   background-color: var(--pubmech-primary);
+  border-bottom: 8px solid var(--pubmech-accent);
 }
 
 .usa-hero__heading {
-  color: white;
+  color: var(--pubmech-light);
 }
 
 .usa-hero__callout p {
-  color: white;
+  color: var(--pubmech-light);
 }
 
 /* Card styling */
 .usa-card {
-  border: 1px solid #dfe1e2;
+  border: 2px solid var(--pubmech-dark);
+  background-color: var(--pubmech-light);
+}
+
+.usa-card__header {
+  background-color: var(--pubmech-primary);
+  color: var(--pubmech-light);
+}
+
+/* Button overrides */
+.usa-button {
+  background-color: var(--pubmech-accent);
+  color: white;
+}
+
+.usa-button:hover {
+  background-color: var(--pubmech-dark);
 }
 
 /* Footer */
 .usa-footer {
-  background-color: var(--pubmech-primary);
-  color: white;
+  background-color: var(--pubmech-dark);
+  color: var(--pubmech-light);
+  border-top: 4px solid var(--pubmech-accent);
 }
 
 .usa-footer a {
-  color: white;
+  color: var(--pubmech-light);
+}
+
+.usa-footer a:hover {
+  color: var(--pubmech-yellow);
 }
 
 /* Custom utilities */
 .pubmech-intro {
   font-size: 1.25rem;
   line-height: 1.6;
-  color: var(--pubmech-gray);
+  color: var(--pubmech-primary);
+}
+
+/* Accent elements */
+.pubmech-accent-bar {
+  height: 4px;
+  background-color: var(--pubmech-accent);
+  margin: 2rem 0;
+}
+
+/* List styling */
+ul li::marker,
+ol li::marker {
+  color: var(--pubmech-accent);
 }
 
 /* Responsive adjustments */
