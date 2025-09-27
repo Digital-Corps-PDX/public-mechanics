@@ -1,13 +1,11 @@
-/* Public Mechanics - Custom Warm Styling */
+/* Public Mechanics - Manifesto Style */
 
 @import url('https://fonts.cdnfonts.com/css/space-grotesk');
 @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans');
 
-/* Brutalist palette with warm application */
 :root {
   --concrete: #696969;
   --signal-red: #dc143c;
-  --safety-yellow: #ffd700;
   --charcoal: #2b2b2b;
   --cream: #f5f5f0;
   --text: #1a1a1a;
@@ -23,183 +21,146 @@ body {
   font-family: 'IBM Plex Sans', system-ui, sans-serif;
   color: var(--text);
   background: var(--cream);
-  line-height: 1.7;
+  line-height: 1.6;
   font-size: 18px;
 }
 
-/* Typography with warmth */
-h1, h2, h3, h4, h5, h6 {
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+}
+
+/* Header */
+.site-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  padding-bottom: 3rem;
+  border-bottom: 3px solid var(--signal-red);
+}
+
+.site-header h1 {
   font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 3rem;
   font-weight: 700;
-  line-height: 1.2;
   margin-bottom: 1rem;
 }
 
-h1 { font-size: 3rem; }
-h2 { font-size: 2rem; margin-top: 3rem; }
-h3 { font-size: 1.5rem; }
+.tagline {
+  font-size: 1.25rem;
+  color: var(--concrete);
+}
+
+/* Typography */
+h2 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-top: 3rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
 
 p {
-  margin-bottom: 1.5rem;
-  max-width: 70ch;
+  margin-bottom: 1.25rem;
 }
 
 a {
   color: var(--signal-red);
+  text-decoration: underline;
   text-decoration-thickness: 2px;
   text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--concrete);
+  color: var(--charcoal);
 }
 
-/* Relaxed header */
-header {
-  padding: 2rem 0;
-  border-bottom: 3px solid var(--signal-red);
-  background: white;
+/* Manifesto section */
+.manifesto {
+  margin-bottom: 3rem;
 }
 
-.site-title {
-  font-family: 'Space Grotesk', system-ui, sans-serif;
+.lead {
   font-size: 1.5rem;
-  font-weight: 700;
-  color: var(--text);
-  text-decoration: none;
-}
-
-nav {
-  margin-top: 1rem;
-}
-
-nav a {
-  margin-right: 2rem;
-  text-decoration: none;
-  color: var(--text);
+  line-height: 1.5;
+  margin-bottom: 2rem;
   font-weight: 500;
 }
 
-nav a:hover {
-  color: var(--signal-red);
-}
-
-/* Generous spacing hero */
-.hero {
-  padding: 6rem 0 4rem;
-  background: var(--concrete);
-  color: var(--cream);
-}
-
-.hero h1 {
+.manifesto p {
+  font-size: 1.125rem;
   margin-bottom: 1.5rem;
 }
 
-.hero p {
-  font-size: 1.25rem;
-  opacity: 0.95;
+/* Mindset section */
+.mindset {
+  background: white;
+  padding: 2rem;
+  margin: 3rem 0;
+  border-left: 4px solid var(--signal-red);
 }
 
-/* Breathing room layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
+.values-list {
+  list-style: none;
+  margin-top: 1.5rem;
 }
 
-.content-wrapper {
-  display: grid;
-  grid-template-columns: 1fr 300px;
-  gap: 4rem;
-  padding: 4rem 0;
+.values-list li {
+  margin-bottom: 1rem;
+  padding-left: 1.5rem;
+  position: relative;
 }
 
-main {
-  min-width: 0;
+.values-list li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--signal-red);
+  font-weight: bold;
 }
 
-/* Friendly lists */
+/* Sections */
+section {
+  margin-bottom: 3rem;
+}
+
+/* Lists */
 ul, ol {
   margin-left: 1.5rem;
-  margin-bottom: 1.5rem;
+  margin-top: 1rem;
 }
 
 li {
   margin-bottom: 0.75rem;
-  padding-left: 0.5rem;
 }
 
-li::marker {
+ul li::marker {
   color: var(--signal-red);
 }
 
-/* Approachable card */
-.sidebar-card {
-  background: white;
-  padding: 2rem;
-  border-left: 4px solid var(--signal-red);
-  position: sticky;
-  top: 2rem;
-}
-
-.sidebar-card h3 {
-  margin-top: 0;
-  font-size: 1.25rem;
-}
-
-.sidebar-card p {
-  font-size: 0.95rem;
-  color: var(--concrete);
-}
-
-.sidebar-card .button {
-  display: inline-block;
-  margin-top: 1rem;
-  padding: 0.75rem 1.5rem;
-  background: var(--signal-red);
-  color: white;
-  text-decoration: none;
-  font-weight: 600;
-  border-radius: 2px;
-}
-
-.sidebar-card .button:hover {
-  background: var(--charcoal);
-}
-
-/* Warm footer */
-footer {
-  background: var(--charcoal);
-  color: var(--cream);
-  padding: 3rem 0 2rem;
-  margin-top: 6rem;
-  border-top: 4px solid var(--signal-red);
-}
-
-footer a {
-  color: var(--cream);
-  text-decoration-color: var(--safety-yellow);
-}
-
-footer a:hover {
-  color: var(--safety-yellow);
-}
-
-/* Numbered list styling for get started */
+/* Numbered lists */
 ol {
-  counter-reset: step;
+  counter-reset: item;
   list-style: none;
   margin-left: 0;
 }
 
 ol li {
-  counter-increment: step;
-  position: relative;
+  counter-increment: item;
   padding-left: 3rem;
+  position: relative;
 }
 
 ol li::before {
-  content: counter(step);
+  content: counter(item);
   position: absolute;
   left: 0;
   top: 0;
@@ -213,6 +174,24 @@ ol li::before {
   justify-content: center;
   font-weight: 700;
   font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 0.875rem;
+}
+
+/* Footer */
+.site-footer {
+  margin-top: 5rem;
+  padding-top: 2rem;
+  border-top: 2px solid var(--concrete);
+  font-size: 0.9rem;
+  color: var(--concrete);
+}
+
+.site-footer p {
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: var(--signal-red);
 }
 
 /* Responsive */
@@ -221,20 +200,19 @@ ol li::before {
     font-size: 16px;
   }
   
-  h1 { font-size: 2rem; }
-  h2 { font-size: 1.5rem; }
-  
-  .content-wrapper {
-    grid-template-columns: 1fr;
-    gap: 2rem;
+  .container {
+    padding: 2rem 1.5rem;
   }
   
-  .sidebar-card {
-    position: static;
+  .site-header h1 {
+    font-size: 2rem;
   }
   
-  nav a {
-    display: block;
-    margin: 0.5rem 0;
+  .lead {
+    font-size: 1.25rem;
+  }
+  
+  h2 {
+    font-size: 1.5rem;
   }
 }
