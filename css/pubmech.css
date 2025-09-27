@@ -1,128 +1,240 @@
-/* Public Mechanics Custom Styles - Brutalist Palette */
+/* Public Mechanics - Custom Warm Styling */
 
-/* Fonts from CDN */
-css@import url('https://fonts.cdnfonts.com/css/space-grotesk');
+@import url('https://fonts.cdnfonts.com/css/space-grotesk');
 @import url('https://fonts.cdnfonts.com/css/ibm-plex-sans');
 
-/* CSS Variables - 1960s Brutalist/Concrete palette */
+/* Brutalist palette with warm application */
 :root {
-  --pubmech-primary: #696969; /* Concrete gray */
-  --pubmech-accent: #dc143c; /* Signal red */
-  --pubmech-yellow: #ffd700; /* Safety yellow - alternative accent */
-  --pubmech-text: #1a1a1a; /* Near black */
-  --pubmech-light: #f5f5f0; /* Off-white */
-  --pubmech-dark: #2b2b2b; /* Dark charcoal */
-  --pubmech-font-body: 'IBM Plex Sans', system-ui, sans-serif;
-  --pubmech-font-heading: 'Space Grotesk', system-ui, sans-serif;
-}
+  --concrete: #696969;
+  --signal-red: #dc143c;
+  --safety-yellow: #ffd700;
+  --charcoal: #2b2b2b;
+  --cream: #f5f5f0;
+  --text: #1a1a1a;
 }
 
-/* Apply custom typography */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
-  font-family: var(--pubmech-font-body);
-  color: var(--pubmech-text);
+  font-family: 'IBM Plex Sans', system-ui, sans-serif;
+  color: var(--text);
+  background: var(--cream);
+  line-height: 1.7;
+  font-size: 18px;
 }
 
-h1, h2, h3, h4, h5, h6,
-.usa-hero__heading,
-.font-heading-xl {
-  font-family: var(--pubmech-font-heading);
+/* Typography with warmth */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
   font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1rem;
 }
 
-/* Custom link styles */
+h1 { font-size: 3rem; }
+h2 { font-size: 2rem; margin-top: 3rem; }
+h3 { font-size: 1.5rem; }
+
+p {
+  margin-bottom: 1.5rem;
+  max-width: 70ch;
+}
+
 a {
-  color: var(--pubmech-accent);
+  color: var(--signal-red);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
 }
 
 a:hover {
-  color: var(--pubmech-primary);
+  color: var(--concrete);
 }
 
-/* Header customization */
-.usa-header {
-  border-bottom: 4px solid var(--pubmech-accent);
+/* Relaxed header */
+header {
+  padding: 2rem 0;
+  border-bottom: 3px solid var(--signal-red);
+  background: white;
 }
 
-.usa-logo__text a {
-  color: var(--pubmech-text);
-  text-decoration: none;
+.site-title {
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+  font-size: 1.5rem;
   font-weight: 700;
+  color: var(--text);
+  text-decoration: none;
 }
 
-/* Hero section customization */
-.usa-hero {
-  background-color: var(--pubmech-primary);
-  border-bottom: 8px solid var(--pubmech-accent);
+nav {
+  margin-top: 1rem;
 }
 
-.usa-hero__heading {
-  color: var(--pubmech-light);
+nav a {
+  margin-right: 2rem;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 500;
 }
 
-.usa-hero__callout p {
-  color: var(--pubmech-light);
+nav a:hover {
+  color: var(--signal-red);
 }
 
-/* Card styling */
-.usa-card {
-  border: 2px solid var(--pubmech-dark);
-  background-color: var(--pubmech-light);
+/* Generous spacing hero */
+.hero {
+  padding: 6rem 0 4rem;
+  background: var(--concrete);
+  color: var(--cream);
 }
 
-.usa-card__header {
-  background-color: var(--pubmech-primary);
-  color: var(--pubmech-light);
+.hero h1 {
+  margin-bottom: 1.5rem;
 }
 
-/* Button overrides */
-.usa-button {
-  background-color: var(--pubmech-accent);
-  color: white;
-}
-
-.usa-button:hover {
-  background-color: var(--pubmech-dark);
-}
-
-/* Footer */
-.usa-footer {
-  background-color: var(--pubmech-dark);
-  color: var(--pubmech-light);
-  border-top: 4px solid var(--pubmech-accent);
-}
-
-.usa-footer a {
-  color: var(--pubmech-light);
-}
-
-.usa-footer a:hover {
-  color: var(--pubmech-yellow);
-}
-
-/* Custom utilities */
-.pubmech-intro {
+.hero p {
   font-size: 1.25rem;
-  line-height: 1.6;
-  color: var(--pubmech-primary);
+  opacity: 0.95;
 }
 
-/* Accent elements */
-.pubmech-accent-bar {
-  height: 4px;
-  background-color: var(--pubmech-accent);
-  margin: 2rem 0;
+/* Breathing room layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
 
-/* List styling */
-ul li::marker,
-ol li::marker {
-  color: var(--pubmech-accent);
+.content-wrapper {
+  display: grid;
+  grid-template-columns: 1fr 300px;
+  gap: 4rem;
+  padding: 4rem 0;
 }
 
-/* Responsive adjustments */
-@media (max-width: 640px) {
-  .usa-hero__heading {
-    font-size: 2rem;
+main {
+  min-width: 0;
+}
+
+/* Friendly lists */
+ul, ol {
+  margin-left: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+li {
+  margin-bottom: 0.75rem;
+  padding-left: 0.5rem;
+}
+
+li::marker {
+  color: var(--signal-red);
+}
+
+/* Approachable card */
+.sidebar-card {
+  background: white;
+  padding: 2rem;
+  border-left: 4px solid var(--signal-red);
+  position: sticky;
+  top: 2rem;
+}
+
+.sidebar-card h3 {
+  margin-top: 0;
+  font-size: 1.25rem;
+}
+
+.sidebar-card p {
+  font-size: 0.95rem;
+  color: var(--concrete);
+}
+
+.sidebar-card .button {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: var(--signal-red);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 2px;
+}
+
+.sidebar-card .button:hover {
+  background: var(--charcoal);
+}
+
+/* Warm footer */
+footer {
+  background: var(--charcoal);
+  color: var(--cream);
+  padding: 3rem 0 2rem;
+  margin-top: 6rem;
+  border-top: 4px solid var(--signal-red);
+}
+
+footer a {
+  color: var(--cream);
+  text-decoration-color: var(--safety-yellow);
+}
+
+footer a:hover {
+  color: var(--safety-yellow);
+}
+
+/* Numbered list styling for get started */
+ol {
+  counter-reset: step;
+  list-style: none;
+  margin-left: 0;
+}
+
+ol li {
+  counter-increment: step;
+  position: relative;
+  padding-left: 3rem;
+}
+
+ol li::before {
+  content: counter(step);
+  position: absolute;
+  left: 0;
+  top: 0;
+  background: var(--signal-red);
+  color: white;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-family: 'Space Grotesk', system-ui, sans-serif;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  body {
+    font-size: 16px;
+  }
+  
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  
+  .content-wrapper {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .sidebar-card {
+    position: static;
+  }
+  
+  nav a {
+    display: block;
+    margin: 0.5rem 0;
   }
 }
