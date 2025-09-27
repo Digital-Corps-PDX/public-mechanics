@@ -1,0 +1,94 @@
+/* Public Mechanics Custom Styles */
+
+/* Custom font - replace with your purchased font */
+@font-face {
+  font-family: 'PubMechFont';
+  src: url('../fonts/pubmech-regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'PubMechFont';
+  src: url('../fonts/pubmech-bold.woff2') format('woff2');
+  font-weight: bold;
+  font-style: normal;
+}
+
+/* CSS Variables for easy theme updates */
+:root {
+  --pubmech-primary: #1b1b1b;
+  --pubmech-accent: #0071bc;
+  --pubmech-text: #212121;
+  --pubmech-gray: #71767a;
+  --pubmech-font-body: 'PubMechFont', system-ui, -apple-system, sans-serif;
+  --pubmech-font-heading: 'PubMechFont', system-ui, -apple-system, sans-serif;
+}
+
+/* Apply custom typography */
+body {
+  font-family: var(--pubmech-font-body);
+}
+
+h1, h2, h3, h4, h5, h6,
+.usa-hero__heading,
+.font-heading-xl {
+  font-family: var(--pubmech-font-heading);
+}
+
+/* Custom link styles */
+a {
+  color: var(--pubmech-accent);
+}
+
+a:hover {
+  color: var(--pubmech-primary);
+}
+
+/* Header customization */
+.usa-logo__text a {
+  color: var(--pubmech-primary);
+  text-decoration: none;
+}
+
+/* Hero section customization */
+.usa-hero {
+  background-color: var(--pubmech-primary);
+}
+
+.usa-hero__heading {
+  color: white;
+}
+
+.usa-hero__callout p {
+  color: white;
+}
+
+/* Card styling */
+.usa-card {
+  border: 1px solid #dfe1e2;
+}
+
+/* Footer */
+.usa-footer {
+  background-color: var(--pubmech-primary);
+  color: white;
+}
+
+.usa-footer a {
+  color: white;
+}
+
+/* Custom utilities */
+.pubmech-intro {
+  font-size: 1.25rem;
+  line-height: 1.6;
+  color: var(--pubmech-gray);
+}
+
+/* Responsive adjustments */
+@media (max-width: 640px) {
+  .usa-hero__heading {
+    font-size: 2rem;
+  }
+}
